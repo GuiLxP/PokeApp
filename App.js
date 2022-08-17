@@ -8,6 +8,7 @@ const Stack = createStackNavigator()
 import Login from './src/pages/Login/Login'
 import Home from './src/pages/Home/Home'
 import NewPlayer from './src/pages/NewPlayer/NewPlayer'
+import ChoisePokemon from './src/pages/ChoisePokemon/ChoisePokemon'
 
 export default function App() {
   return (
@@ -34,6 +35,7 @@ export default function App() {
             headerTintColor: '#FFF',
           }}
         />
+        <Stack.Screen name="ChoisePokemon" component={ChoisePokemon} />
       </Stack.Navigator>
     </NavigationContainer>
   )

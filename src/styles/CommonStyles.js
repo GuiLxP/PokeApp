@@ -7,7 +7,7 @@ export const commonStyles = StyleSheet.create({
     borderRadius: 10,
     backgroundColor: '#0D4DA3',
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
   },
   buttonText: {
     color: '#FFF',

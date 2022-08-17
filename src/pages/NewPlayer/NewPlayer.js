@@ -1,6 +1,13 @@
-import { ScrollView, TextInput, StyleSheet } from 'react-native'
+import { ScrollView, TextInput, StyleSheet, TouchableOpacity, Text } from 'react-native'
 
-export default function NewPlayer() {
+import { commonStyles } from '../../styles/CommonStyles'
+
+export default function NewPlayer({navigation}) {
+
+  function navigateToPokemon() {
+    navigation.navigate('ChoisePokemon')
+  }
+
   return (
     <ScrollView>
 
@@ -60,9 +67,11 @@ export default function NewPlayer() {
         selectionColor="#0D4DA3"
         multiline
       />
-
     
-  
+      <TouchableOpacity onPress={navigateToPokemon} style={{...commonStyles.button, alignSelf: 'center'}}>
+        <Text style={commonStyles.buttonText}>Entrar</Text>
+      </TouchableOpacity>
+
     </ScrollView>
   )
 }
