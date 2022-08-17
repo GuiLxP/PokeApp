@@ -2,6 +2,8 @@ import { TextInput, Text, ImageBackground, StyleSheet, TouchableOpacity } from '
 
 import FundoApp from '../../../assets/bg.jpg'
 
+import {commonStyles} from '../../styles/CommonStyles'
+
 export default function Login({ navigation }) {
 
   function navigateForHome() {
@@ -32,8 +34,8 @@ export default function Login({ navigation }) {
         secureTextEntry
       />
 
-      <TouchableOpacity style={styles.button} onPress={navigateForHome}>
-        <Text style={styles.buttonText}>Entrar</Text>
+      <TouchableOpacity style={commonStyles.button} onPress={navigateForHome}>
+        <Text style={commonStyles.buttonText}>Entrar</Text>
       </TouchableOpacity>
 
       <Text
@@ -69,18 +71,6 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginTop: 40
   },
-  button: {
-    height: 50,
-    width: '50%',
-    borderRadius: 10,
-    backgroundColor: '#0D4DA3',
-    alignItems: 'center',
-    justifyContent: 'center'
-  },
-  buttonText: {
-    color: '#FFF',
-    fontSize: 14
-  }
 })
 
 

@@ -1,9 +1,9 @@
-import { View, TextInput, StyleSheet } from 'react-native'
+import { ScrollView, TextInput, StyleSheet } from 'react-native'
 
 export default function NewPlayer() {
   return (
-    <View>
-      
+    <ScrollView>
+
       <TextInput
         style={styles.input}
         placeholder="Digite seu nickname"
@@ -37,12 +37,12 @@ export default function NewPlayer() {
       />
 
 
-<TextInput
+      <TextInput
         style={styles.input}
         placeholder="Digite sua senha"
         placeholderTextColor="#0D4DA3"
         selectionColor="#0D4DA3"
-      secureTextEntry
+        secureTextEntry
       />
 
       <TextInput
@@ -52,7 +52,18 @@ export default function NewPlayer() {
         selectionColor="#0D4DA3"
         multiline
       />
-    </View>
+
+      <TextInput
+        style={{ ...styles.input, ...styles.inputTextarea }}
+        placeholder="Digite sua frase de efeito"
+        placeholderTextColor="#0D4DA3"
+        selectionColor="#0D4DA3"
+        multiline
+      />
+
+    
+  
+    </ScrollView>
   )
 }
 
@@ -71,6 +82,7 @@ const styles = StyleSheet.create({
   inputTextarea: {
     height: 80,
     textAlignVertical: 'top',
-    textAlign: 'auto'
+    textAlign: 'auto',
+    padding: 5
   }
 })
