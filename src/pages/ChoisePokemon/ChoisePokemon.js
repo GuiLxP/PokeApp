@@ -1,8 +1,8 @@
-import { View, Text, StyleSheet, Image, ScrollView, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, Image, ScrollView, Dimensions, TouchableOpacity, Alert } from 'react-native'
 
 const larguraDaTela = Dimensions.get('screen').width
 
-export default function ChoisePokemon() {
+export default function ChoisePokemon({ navigation }) {
 
   const pokemons = [
     {
@@ -27,20 +27,38 @@ export default function ChoisePokemon() {
     }
   ]
 
+  function clickPokemon(pokemonName) {
+    Alert.alert(
+      'Aviso',
+      pokemonName + ' foi selecionado',
+      [
+        {
+          text: 'Sim',
+          onPress: () => navigation.navigate('Terms')
+        },
+        {
+          text: 'Não'
+        }
+      ]
+    )
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Qual seu pokemon inicial ?</Text>
       <ScrollView horizontal>
 
         {pokemons.map((pokemon) => (
-          <View style={styles.cardPokemon} key={pokemon.name}>
-            <Text style={styles.pokemonName}>{pokemon.name}</Text>
-            <Image
-              source={{ uri: pokemon.url }}
-              style={styles.pokemon}
-              resizeMode="contain"
-            />
-          </View>
+          <TouchableOpacity activeOpacity={0.6} onPress={() => clickPokemon(pokemon.name)}>
+            <View style={styles.cardPokemon} key={pokemon.name}>
+              <Text style={styles.pokemonName}>{pokemon.name}</Text>
+              <Image
+                source={{ uri: pokemon.url }}
+                style={styles.pokemon}
+                resizeMode="contain"
+              />
+            </View>
+          </TouchableOpacity>
         ))}
 
       </ScrollView>

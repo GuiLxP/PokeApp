@@ -9,6 +9,7 @@ import Login from './src/pages/Login/Login'
 import Home from './src/pages/Home/Home'
 import NewPlayer from './src/pages/NewPlayer/NewPlayer'
 import ChoisePokemon from './src/pages/ChoisePokemon/ChoisePokemon'
+import Terms from './src/pages/Terms/Terms'
 
 export default function App() {
   return (
@@ -46,6 +47,7 @@ export default function App() {
             headerTintColor: '#FFF',
           }}
         />
+        <Stack.Screen name="Terms" component={Terms} />
       </Stack.Navigator>
     </NavigationContainer>
   )
