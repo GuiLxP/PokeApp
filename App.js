@@ -35,7 +35,17 @@ export default function App() {
             headerTintColor: '#FFF',
           }}
         />
-        <Stack.Screen name="ChoisePokemon" component={ChoisePokemon} />
+        <Stack.Screen
+          name="ChoisePokemon"
+          component={ChoisePokemon}
+          options={{
+            title: 'Escolha o Pokemon',
+            headerStyle: {
+              backgroundColor: '#0D4DA3'
+            },
+            headerTintColor: '#FFF',
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   )

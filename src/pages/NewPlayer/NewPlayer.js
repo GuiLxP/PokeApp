@@ -2,7 +2,7 @@ import { ScrollView, TextInput, StyleSheet, TouchableOpacity, Text } from 'react
 
 import { commonStyles } from '../../styles/CommonStyles'
 
-export default function NewPlayer({navigation}) {
+export default function NewPlayer({ navigation }) {
 
   function navigateToPokemon() {
     navigation.navigate('ChoisePokemon')
@@ -67,8 +67,10 @@ export default function NewPlayer({navigation}) {
         selectionColor="#0D4DA3"
         multiline
       />
-    
-      <TouchableOpacity onPress={navigateToPokemon} style={{...commonStyles.button, alignSelf: 'center'}}>
+
+      <TouchableOpacity
+        onPress={navigateToPokemon}
+        style={{ ...commonStyles.button, alignSelf: 'center' }}>
         <Text style={commonStyles.buttonText}>Entrar</Text>
       </TouchableOpacity>
 
