@@ -49,8 +49,8 @@ export default function ChoisePokemon({ navigation }) {
       <ScrollView horizontal>
 
         {pokemons.map((pokemon) => (
-          <TouchableOpacity activeOpacity={0.6} onPress={() => clickPokemon(pokemon.name)}>
-            <View style={styles.cardPokemon} key={pokemon.name}>
+          <TouchableOpacity activeOpacity={0.6} onPress={() => clickPokemon(pokemon.name)} key={pokemon.name}>
+            <View style={styles.cardPokemon} >
               <Text style={styles.pokemonName}>{pokemon.name}</Text>
               <Image
                 source={{ uri: pokemon.url }}

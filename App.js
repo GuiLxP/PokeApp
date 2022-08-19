@@ -2,8 +2,10 @@ import 'react-native-gesture-handler';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 const Stack = createStackNavigator()
+const Tab = createBottomTabNavigator()
 
 import Login from './src/pages/Login/Login'
 import Home from './src/pages/Home/Home'
@@ -11,11 +13,27 @@ import NewPlayer from './src/pages/NewPlayer/NewPlayer'
 import ChoisePokemon from './src/pages/ChoisePokemon/ChoisePokemon'
 import Terms from './src/pages/Terms/Terms'
 
+function HomeNavigator() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home2" component={Home} />
+      <Tab.Screen name="Home3" component={Home} />
+    </Tab.Navigator>
+  )
+}
+
 export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName='Login'>
-        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Home" component={HomeNavigator}
+          options={
+            {
+              headerShown: false
+            }
+          }
+        />
         <Stack.Screen
           name="Login"
           component={Login}
@@ -52,5 +70,4 @@ export default function App() {
     </NavigationContainer>
   )
 }
-
 
