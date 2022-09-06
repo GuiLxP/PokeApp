@@ -1,8 +1,13 @@
 import { View, Text, StyleSheet, Image, ScrollView, Dimensions, TouchableOpacity, Alert } from 'react-native'
+import { useState } from 'react'
 
 const larguraDaTela = Dimensions.get('screen').width
 
-export default function ChoisePokemon({ navigation }) {
+export default function ChoisePokemon({ navigation, route }) {
+
+  const { player } = route.params // armazena valores da tela anterior
+
+  const [selectedPokemon, setSelectedPokemon] = useState('')
 
   const pokemons = [
     {
@@ -27,30 +32,44 @@ export default function ChoisePokemon({ navigation }) {
     }
   ]
 
-  function clickPokemon(pokemonName) {
+  function navigateToTerms() {
     Alert.alert(
-      'Aviso',
-      pokemonName + ' foi selecionado',
+      'Boa escolha !',
+      selectedPokemon + ' foi selecionado. Deseja avançar ?',
       [
         {
           text: 'Sim',
-          onPress: () => navigation.navigate('Terms')
+          onPress: () => navigation.navigate('Terms', {
+            player: player,
+            pokemon: selectedPokemon
+          })
         },
         {
-          text: 'Não'
+          text: 'Não',
         }
       ]
     )
   }
 
+  function selectPokemon(pokemonName) {
+    setSelectedPokemon(pokemonName)
+  }
+
   return (
     <View style={styles.container}>
+
       <Text style={styles.title}>Qual seu pokemon inicial ?</Text>
+
       <ScrollView horizontal>
 
         {pokemons.map((pokemon) => (
-          <TouchableOpacity activeOpacity={0.6} onPress={() => clickPokemon(pokemon.name)} key={pokemon.name}>
-            <View style={styles.cardPokemon} >
+          <TouchableOpacity activeOpacity={0.6} onPress={() => selectPokemon(pokemon.name)} key={pokemon.name}>
+            <View
+              style={{
+                ...styles.cardPokemon,
+                borderColor: pokemon.name === selectedPokemon ? 'green' : '#FFF'
+              }}
+            >
               <Text style={styles.pokemonName}>{pokemon.name}</Text>
               <Image
                 source={{ uri: pokemon.url }}
@@ -62,6 +81,16 @@ export default function ChoisePokemon({ navigation }) {
         ))}
 
       </ScrollView>
+
+      {
+        selectedPokemon !== '' && (
+          <TouchableOpacity style={styles.nextButton} onPress={navigateToTerms}>
+            <Text>Avançar </Text>
+          </TouchableOpacity>
+        )
+      }
+
+
     </View>
   )
 }
@@ -86,7 +115,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 20,
-    padding: 5
+    padding: 5,
+    borderWidth: 4
   },
   pokemonName: {
     color: '#0D4DA3',
@@ -99,5 +129,15 @@ const styles = StyleSheet.create({
     height: '100%',
     borderRadius: 20,
     flexShrink: 1
+  },
+  nextButton: {
+    height: 30,
+    width: '60%',
+    backgroundColor: '#FFF',
+    borderRadius: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignSelf: 'center',
+    marginVertical: 10
   }
 })
