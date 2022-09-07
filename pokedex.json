@@ -1,6 +1,26 @@
 {
-  "players": [],
-  
+  "players": [
+    {
+      "nickname": "Henrique ",
+      "age": "16",
+      "email": "henrique.douglas.costaa@gmail.com",
+      "phone": "55991232556",
+      "password": "22345665",
+      "phrase": "Fhhghhhh hhhhhhh ghhjgbh",
+      "pokemon": "pokemon 3",
+      "id": 3
+    },
+    {
+      "nickname": "Henrique ",
+      "age": "16",
+      "email": "henrique.douglas.costaa@gmail.com",
+      "phone": "55991232556",
+      "password": "22345665",
+      "phrase": "Fhhghhhh hhhhhhh ghhjgbh",
+      "pokemon": "pokemon 3",
+      "id": 4
+    }
+  ],
   "pokemons": [
     {
       "id": 1,

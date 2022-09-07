@@ -1,20 +1,34 @@
 import { Text, ScrollView, StyleSheet, TouchableOpacity, Alert } from 'react-native'
-
 import { commonStyles } from '../../styles/CommonStyles'
+import { API } from '../../services/api'
 
-export default function Terms({navigation}) {
+export default function Terms({ navigation, route }) {
+
+  const { player, pokemon } = route.params
 
   function addPlayer() {
-    Alert.alert(
-      'Sucesso',
-      'Jogador com sucesso',
-      [
-        {
-          text: 'Logar',
-          onPress: () => navigation.navigate('Login')
+    fetch(
+      API + '/players',
+      {
+        body: JSON.stringify({
+          nickname: player.nickname,
+          age: player.age,
+          email: player.email,
+          phone: player.phone,
+          password: player.password,
+          phrase: player.phrase,
+          pokemon: pokemon
+        }),
+          method: 'POST',
+          headers: {
+          'Content-type': 'application/json'
         }
-      ]
-    )
+      })
+      .then(() => {
+          alert('Cadastrado com sucesso')
+          navigation.navigate('Login')
+      })
+      .catch(() => alert('Houve ao tentar cadastrar o jogador'))
   }
 
 

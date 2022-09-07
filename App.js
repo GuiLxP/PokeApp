@@ -12,13 +12,13 @@ import Home from './src/pages/Home/Home'
 import NewPlayer from './src/pages/NewPlayer/NewPlayer'
 import ChoisePokemon from './src/pages/ChoisePokemon/ChoisePokemon'
 import Terms from './src/pages/Terms/Terms'
+import Pokedex from './src/pages/Pokedex/Pokedex';
 
 function HomeNavigator() {
   return (
     <Tab.Navigator>
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Home2" component={Home} />
-      <Tab.Screen name="Home3" component={Home} />
+      <Tab.Screen name="Pokedex" component={Pokedex} />
     </Tab.Navigator>
   )
 }
