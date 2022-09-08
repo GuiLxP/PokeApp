@@ -21,6 +21,16 @@ export default function DetailsPokemon({ route }) {
           <Text>Altura</Text>
         </View>
       </View>
+
+      <View>
+        <Text>HP: {pokemon.base.HP}</Text>
+        <Text>Ataque: {pokemon.base.Attack}</Text>
+        <Text>Defesa: {pokemon.base.Defense}</Text>
+        <Text>Super Ataque: {pokemon.base["Sp. Attack"]}</Text>
+        <Text>Super Defesa: {pokemon.base["Sp. Defense"]}</Text>
+        <Text>Velocidade: {pokemon.base.Speed}</Text>
+      </View>
+
     </View>
   )
 }

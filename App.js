@@ -19,7 +19,8 @@ import DetailsPokemon from './src/pages/DetailsPokemon/DetailsPokemon';
 function PokedexNavigator() {
   return (
     <PokedexStack.Navigator>
-      <PokedexStack.Screen name="Pokedex"
+      <PokedexStack.Screen
+        name="Pokedex"
         component={Pokedex}
       />
       <PokedexStack.Screen name="Details" component={DetailsPokemon} />
@@ -32,12 +33,13 @@ function HomeNavigator() {
     <Tab.Navigator>
       <Tab.Screen name="HomeTab" component={Home} />
       <Tab.Screen
-        name="Pokedex"
+        name="PokedexStack"
         component={PokedexNavigator} options={
           {
             headerShown: false
           }
-        } />
+        }
+      />
     </Tab.Navigator>
   )
 }
