@@ -1,13 +1,18 @@
-import { SafeAreaView, Text, ScrollView, View, Image, StyleSheet, FlatList } from 'react-native'
+import { SafeAreaView, Text, ScrollView, View, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import { useEffect, useState } from 'react'
 import { API } from '../../services/api'
 
-export default function Pokedex() {
+export default function Pokedex({navigation}) {
 
   const [pokemons, setPokemons] = useState([])
 
+  function navigateToDetailsPokemon(pokemon) {
+    navigation.navigate('Details', {pokemon})
+  }
+
+
   useEffect(() => {
-    fetch(API + '/pokemons')
+    fetch(API + '/pokemons?_limit=10')
       .then(async (response) => {
         const data = await response.json()
         setPokemons(data)
@@ -20,10 +25,10 @@ export default function Pokedex() {
       <ScrollView>
         <View style={styles.containerPokemon} >
           {pokemons.map(pokemon => (
-            <View key={pokemon.id} style={styles.cardPokemon}>
+            <TouchableOpacity key={pokemon.id} style={styles.cardPokemon} onLongPress={() => navigateToDetailsPokemon(pokemon)}>
               <Image source={{ uri: pokemon.image.thumbnail }} style={{ width: 50, height: 50 }} />
               <Text>{pokemon.name.english}</Text>
-            </View>
+            </TouchableOpacity>
           ))}
         </View>
 

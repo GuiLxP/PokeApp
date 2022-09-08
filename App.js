@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 
 const Stack = createStackNavigator()
 const Tab = createBottomTabNavigator()
+const PokedexStack = createStackNavigator()
 
 import Login from './src/pages/Login/Login'
 import Home from './src/pages/Home/Home'
@@ -13,12 +14,30 @@ import NewPlayer from './src/pages/NewPlayer/NewPlayer'
 import ChoisePokemon from './src/pages/ChoisePokemon/ChoisePokemon'
 import Terms from './src/pages/Terms/Terms'
 import Pokedex from './src/pages/Pokedex/Pokedex';
+import DetailsPokemon from './src/pages/DetailsPokemon/DetailsPokemon';
+
+function PokedexNavigator() {
+  return (
+    <PokedexStack.Navigator>
+      <PokedexStack.Screen name="Pokedex"
+        component={Pokedex}
+      />
+      <PokedexStack.Screen name="Details" component={DetailsPokemon} />
+    </PokedexStack.Navigator>
+  )
+}
 
 function HomeNavigator() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Pokedex" component={Pokedex} />
+      <Tab.Screen name="HomeTab" component={Home} />
+      <Tab.Screen
+        name="Pokedex"
+        component={PokedexNavigator} options={
+          {
+            headerShown: false
+          }
+        } />
     </Tab.Navigator>
   )
 }
