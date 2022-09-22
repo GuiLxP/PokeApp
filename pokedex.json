@@ -9,6 +9,16 @@
       "phrase": "please, if you are here, give me a chance to work with development",
       "pokemon": "pokemon 3",
       "id": 3
+    },
+    {
+      "nickname": "Guilherme ",
+      "age": "20",
+      "email": "guilhermematheus166@gmail.com",
+      "phone": "5541987717929",
+      "password": "12345678",
+      "phrase": "Here is my second email",
+      "pokemon": "pokemon 4",
+      "id": 4
     }
   ],
   "pokemons": [
