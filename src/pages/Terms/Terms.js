@@ -1,4 +1,5 @@
 import { Text, ScrollView, StyleSheet, TouchableOpacity, Alert } from 'react-native'
+<<<<<<< HEAD
 import { commonStyles } from '../../styles/CommonStyles'
 import { API } from '../../services/api'
 
@@ -29,6 +30,24 @@ export default function Terms({ navigation, route }) {
           navigation.navigate('Login')
       })
       .catch(() => alert('Houve ao tentar cadastrar o jogador'))
+=======
+
+import { commonStyles } from '../../styles/CommonStyles'
+
+export default function Terms({navigation}) {
+
+  function addPlayer() {
+    Alert.alert(
+      'Sucesso',
+      'Jogador com sucesso',
+      [
+        {
+          text: 'Logar',
+          onPress: () => navigation.navigate('Login')
+        }
+      ]
+    )
+>>>>>>> ccd4e1775619fa58be005cd4d24fcbf523dbe737
   }
 
 

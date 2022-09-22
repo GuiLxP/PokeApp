@@ -1,9 +1,14 @@
 import { ScrollView, TextInput, StyleSheet, TouchableOpacity, Text } from 'react-native'
+<<<<<<< HEAD
 import { useState } from 'react'
+=======
+
+>>>>>>> ccd4e1775619fa58be005cd4d24fcbf523dbe737
 import { commonStyles } from '../../styles/CommonStyles'
 
 export default function NewPlayer({ navigation }) {
 
+<<<<<<< HEAD
   const [nickname, setNickname] = useState('')
   const [age, setAge] = useState('16')
   const [email, setEmail] = useState('')
@@ -36,6 +41,10 @@ export default function NewPlayer({ navigation }) {
         },
       })
     }
+=======
+  function navigateToPokemon() {
+    navigation.navigate('ChoisePokemon')
+>>>>>>> ccd4e1775619fa58be005cd4d24fcbf523dbe737
   }
 
   return (
@@ -46,8 +55,11 @@ export default function NewPlayer({ navigation }) {
         placeholder="Digite seu nickname"
         placeholderTextColor="#0D4DA3"
         selectionColor="#0D4DA3"
+<<<<<<< HEAD
         value={nickname}
         onChangeText={setNickname}
+=======
+>>>>>>> ccd4e1775619fa58be005cd4d24fcbf523dbe737
       />
 
       <TextInput
@@ -57,8 +69,11 @@ export default function NewPlayer({ navigation }) {
         selectionColor="#0D4DA3"
         keyboardType='number-pad'
         maxLength={3}
+<<<<<<< HEAD
         value={age}
         onChangeText={setAge}
+=======
+>>>>>>> ccd4e1775619fa58be005cd4d24fcbf523dbe737
       />
 
       <TextInput
@@ -67,8 +82,11 @@ export default function NewPlayer({ navigation }) {
         placeholderTextColor="#0D4DA3"
         selectionColor="#0D4DA3"
         keyboardType='email-address'
+<<<<<<< HEAD
         value={email}
         onChangeText={setEmail}
+=======
+>>>>>>> ccd4e1775619fa58be005cd4d24fcbf523dbe737
       />
 
       <TextInput
@@ -77,8 +95,11 @@ export default function NewPlayer({ navigation }) {
         placeholderTextColor="#0D4DA3"
         selectionColor="#0D4DA3"
         keyboardType='phone-pad'
+<<<<<<< HEAD
         value={phone}
         onChangeText={setPhone}
+=======
+>>>>>>> ccd4e1775619fa58be005cd4d24fcbf523dbe737
       />
 
 
@@ -88,8 +109,11 @@ export default function NewPlayer({ navigation }) {
         placeholderTextColor="#0D4DA3"
         selectionColor="#0D4DA3"
         secureTextEntry
+<<<<<<< HEAD
         value={password}
         onChangeText={setPassword}
+=======
+>>>>>>> ccd4e1775619fa58be005cd4d24fcbf523dbe737
       />
 
       <TextInput
@@ -98,8 +122,11 @@ export default function NewPlayer({ navigation }) {
         placeholderTextColor="#0D4DA3"
         selectionColor="#0D4DA3"
         multiline
+<<<<<<< HEAD
         value={phrase}
         onChangeText={setPhrase}
+=======
+>>>>>>> ccd4e1775619fa58be005cd4d24fcbf523dbe737
       />
 
       <TouchableOpacity

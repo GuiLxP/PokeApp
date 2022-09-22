@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import { View, StyleSheet } from 'react-native'
 import { useState, useEffect } from 'react'
 
@@ -87,3 +88,14 @@ const styles = StyleSheet.create({
     flex: 1
   }
 })
+=======
+import {View, Text} from 'react-native'
+
+export default function Home() {
+  return (
+    <View>
+      <Text>Tela home</Text>
+    </View>
+  )
+}
+>>>>>>> ccd4e1775619fa58be005cd4d24fcbf523dbe737
